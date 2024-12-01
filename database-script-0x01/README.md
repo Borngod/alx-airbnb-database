@@ -1,17 +1,20 @@
-## 2. Design Database Schema (DDL)
+### 2\. Design Database Schema (DDL)
 
-Objective: Write SQL queries to define the database schema (create tables, set constraints).
+mandatory
 
-Instructions:
+**Objective**: Write SQL queries to define the database schema (create tables, set constraints).
 
-Based on the provided database specification, create SQL CREATE TABLE statements for each entity.
+**Instructions:**
 
-Ensure proper data types, primary keys, foreign keys, and constraints.
+- Based on the provided database specification, create SQL `CREATE TABLE` statements for each entity.
+    
+- Ensure proper data types, primary keys, foreign keys, and constraints.
+    
+- Create necessary indexes on columns for optimal performance.
+    
 
-Create necessary indexes on columns for optimal performance.
+**Repo:**
 
-Repo:
-
-GitHub repository: alx-airbnb-database
-Directory: database-script-0x01
-File: schema.sql, README.md
+- GitHub repository: `alx-airbnb-database`
+- Directory: `database-script-0x01`
+- File: `schema.sql, README.md`
