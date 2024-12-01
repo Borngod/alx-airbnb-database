@@ -1,4 +1,4 @@
--- Initial Query to retrieve bookings along with user, property, and payment details
+-- Initial Query to retrieve all bookings along with user, property, and payment details
 SELECT 
     b.booking_id, 
     b.start_date, 
@@ -25,8 +25,9 @@ JOIN
     payment pay ON b.booking_id = pay.booking_id
 WHERE 
     TRUE 
-ORDER BY 
+    AND b.booking_id IS NOT NULL 
     b.start_date DESC;
+
 
 EXPLAIN ANALYZE
 SELECT 
