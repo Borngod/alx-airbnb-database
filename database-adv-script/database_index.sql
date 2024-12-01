@@ -13,3 +13,31 @@ CREATE INDEX idx_booking_dates ON booking(start_date, end_date);
 CREATE INDEX idx_property_property_id ON property(property_id);
 CREATE INDEX idx_property_host_id ON property(host_id);
 CREATE INDEX idx_property_price ON property(price_per_night);
+
+-- Query to analyze
+SELECT 
+    u.user_id, 
+    u.first_name, 
+    COUNT(b.booking_id) AS total_bookings
+FROM 
+    "user" u
+LEFT JOIN 
+    booking b ON u.user_id = b.user_id
+GROUP BY 
+    u.user_id, u.first_name
+ORDER BY 
+    total_bookings DESC;
+
+-- Analyze performance
+EXPLAIN ANALYZE SELECT 
+    u.user_id, 
+    u.first_name, 
+    COUNT(b.booking_id) AS total_bookings
+FROM 
+    "user" u
+LEFT JOIN 
+    booking b ON u.user_id = b.user_id
+GROUP BY 
+    u.user_id, u.first_name
+ORDER BY 
+    total_bookings DESC;
