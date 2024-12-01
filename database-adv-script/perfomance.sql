@@ -23,6 +23,8 @@ JOIN
     property p ON b.property_id = p.property_id
 JOIN 
     payment pay ON b.booking_id = pay.booking_id
+WHERE 
+    TRUE 
 ORDER BY 
     b.start_date DESC;
 
