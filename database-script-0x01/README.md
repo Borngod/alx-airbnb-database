@@ -1,6 +1,5 @@
-2. Design Database Schema (DDL)
-mandatory
-Score: 0.0% (Checks completed: 0.0%)
+## 2. Design Database Schema (DDL)
+
 Objective: Write SQL queries to define the database schema (create tables, set constraints).
 
 Instructions:
