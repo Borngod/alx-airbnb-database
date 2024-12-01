@@ -1,19 +1,18 @@
 SELECT 
-    p.property_id,
-    p.name,
-    p.description,
-    p.price_per_night,
-    (SELECT AVG(rating) 
-     FROM review r 
-     WHERE r.property_id = p.property_id) AS average_rating
+    p.property_id, 
+    p.name, 
+    p.description, 
+    p.price_per_night
 FROM 
     property p
 WHERE 
-    (SELECT AVG(rating) 
-     FROM review r 
-     WHERE r.property_id = p.property_id) > 4.0
-ORDER BY 
-    average_rating DESC;
+    p.property_id IN (
+        SELECT r.property_id
+        FROM review r
+        GROUP BY r.property_id
+        HAVING AVG(r.rating) > 4.0
+    );
+
 
 
 SELECT 
